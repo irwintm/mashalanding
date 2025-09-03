@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing</title>
+  <meta name="description" content="Minimal responsive landing image that opens an email on click." />
+  <meta property="og:title" content="Landing" />
+  <meta property="og:description" content="Minimal responsive landing image that opens an email on click." />
+  <meta property="og:type" content="website" />
+  <style>
+    html, body { height: 100%; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .hero-link {
+      display: block;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      outline: none;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-link:focus-visible {
+      box-shadow: 0 0 0 4px rgba(255,255,255,.35) inset;
+    }
+
+    .caption {
+      position: fixed;
+      bottom: 0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(3px);
+      padding: .35rem .6rem;
+      border-radius: .4rem;
+      font-size: .85rem;
+      line-height: 1.2;
+      letter-spacing: .02em;
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      .caption { font-size: .78rem; }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Updated with hi@mashasalsa.com and mashalanding.png as the image.
+  -->
+
+  <a
+    class="hero-link"
+    href="mailto:hi@mashasalsa.com?subject=Who%20are%20You%3F"
+    aria-label="Open email to contact us (subject: Who are You?)"
+  >
+    <img
+      class="hero-img"
+      src="mashalanding.png"
+      alt="Full-bleed landing artwork"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </a>
+
+  <div class="caption">Click anywhere to email us</div>
+
+  <noscript>
+    <div style="position:fixed;bottom:0;left:0;right:0;padding:.5rem 1rem;background:#111;color:#fff;font:14px/1.4 system-ui">JavaScript is disabled. The image remains fully clickable and will still open your email client.</div>
+  </noscript>
+</body>
+</html>
